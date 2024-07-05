@@ -1,12 +1,11 @@
 const express = require('express');
 const app = express();
-let port; // Deklaration außerhalb des if-else-Blocks
-if (process.env.NODE_ENV !== 'production') {
-  port = 3000; // Standardwert hinzufügen, falls PORT nicht gesetzt ist
+const port=process.env.PORT;
+if (port != null && port != "") {
+  port=process.env.PORT;
 } else {
-  port = process.env.PORT;
+ port = 3000;
 }
-
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
