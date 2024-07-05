@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
+const http = require('http');
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// Verwenden Sie die Umgebungsvariable PORT oder einen Standardwert
-const port = process.env.PORT || 3000;
+const server = http.createServer(app);
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server läuft auf Port ${port}`);
+server.listen(0, '0.0.0.0', () => {
+  const address = server.address();
+  console.log(`Server läuft auf Port ${address.port}`);
 });
