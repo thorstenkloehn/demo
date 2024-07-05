@@ -1,11 +1,10 @@
 const express = require('express');
 const app = express();
-const port=process.env.PORT;
-if (port != null && port != "") {
-  port=process.env.PORT;
-} else {
- port = 3000;
+let port = process.env.PORT; // Verwenden Sie 'let' für die port-Variable, um sie neu zuweisen zu können
+if (!port) {
+  port = 3000; // Setzen Sie port auf 3000, wenn process.env.PORT undefiniert ist
 }
+
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
