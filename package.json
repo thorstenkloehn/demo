@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "ttt"
+    "test": "ttt",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
