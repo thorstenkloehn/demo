@@ -1,12 +1,9 @@
 const express = require('express');
 const app = express();
 let port;
-if (process.start==1) {
+
   port = process.env.PORT;
-}
-else {
-  port = 3000;
-}
+
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
