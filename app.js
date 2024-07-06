@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 let port = process.env.PORT; // Verwenden Sie 'let' für die port-Variable, um sie neu zuweisen zu können
-if (!port) {
-  port = 3000; // Setzen Sie port auf 3000, wenn process.env.PORT undefiniert ist
+if (process.env.start==1) {
+  port = process.env.PORT;
 }
 else {
-  port = process.env.PORT;
+  port = 3000;
 }
 
 app.get('/', (req, res) => {
