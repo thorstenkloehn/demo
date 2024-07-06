@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 let port;
-if (process.env.start==1) {
+if (process.start==1) {
   port = process.env.PORT;
 }
 else {
